@@ -29,7 +29,7 @@ namespace ExchangeRate.Providers
                     return new ExchangeResult
                     {
                         Provider = "APIProvider1",
-                        ExchangeRate = apiResponse.ConversionRate,
+                        ExchangeRate = apiResponse.ConversionResult,
                         IsSuccessful = true
                     };
                 }
