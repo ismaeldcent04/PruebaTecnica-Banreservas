@@ -45,9 +45,12 @@
     <Compile Include="Models\ExchangeRequest.cs" />
     <Compile Include="Models\ExchangeResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\APIProvider1.cs" />
+    <Compile Include="Providers\APIProvider2.cs" />
+    <Compile Include="Providers\APIProvider3.cs" />
+    <Compile Include="Providers\IProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Providers\" />
     <Folder Include="Services\" />
     <Folder Include="Utils\" />
   </ItemGroup>
