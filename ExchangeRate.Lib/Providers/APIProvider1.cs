@@ -1,4 +1,5 @@
 ﻿using ExchangeRate.Models;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,11 @@ namespace ExchangeRate.Providers
 {
     public class APIProvider1 : IProvider
     {
-
+     
         public async Task<ExchangeResult> Convert(ExchangeRequest exchangeRequest)
         {
+        
+
             try
             {
                 var client = new HttpClient();
@@ -28,26 +31,26 @@ namespace ExchangeRate.Providers
                 {
                     return new ExchangeResult
                     {
-                        Provider = "APIProvider1",
-                        ExchangeRate = apiResponse.ConversionResult,
+                        Provider = "exchangerate-api",
+                        ExchangeRate = Math.Round(apiResponse.ConversionResult,2),
                         IsSuccessful = true
                     };
                 }
 
                 return new ExchangeResult
                 {
-                    Provider = "APIProvider1",
+                    Provider = "exchangerate-api",
                     ExchangeRate = 0,
                     IsSuccessful = false
                 };
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return new ExchangeResult
                 {
-                    Provider = "APIProvider1",
+                    Provider = "exchangerate-api",
                     ExchangeRate = 0,
                     IsSuccessful = false
                 };

@@ -1,18 +1,20 @@
 ﻿
 
+using ExchangeRate.Lib.Services;
 using ExchangeRate.Models;
 using ExchangeRate.Providers;
 
-var request = new ExchangeRequest("USD", "DOP", 1000);
+var providers = new List<IProvider>
+{
+    new APIProvider1(),
+    new APIProvider2(),
+    new APIProvider3()
+};
 
-var provider = new APIProvider1();
-var provider2 = new APIProvider2();
-var provider3 = new APIProvider3();
+var service = new ExchangeService(providers);
 
-var result1 = await provider.Convert(request);
-var result2 = await provider2.Convert(request);
-var result3 = await provider3.Convert(request);
+var request = new ExchangeRequest("CAD", "JPY", 1500);
 
-Console.WriteLine($"Proveedor1: {Math.Round(result1.ExchangeRate,2)}");
-Console.WriteLine($"Proveedor2: {Math.Round(result2.ExchangeRate, 2)}");
-Console.WriteLine($"Proveedor3: {Math.Round(result3.ExchangeRate, 2)}");
+var result = await service.GetBestExchangeRate(request);
+
+Console.WriteLine($"The best exchange rate was {result.ExchangeRate} using {result.Provider}");
