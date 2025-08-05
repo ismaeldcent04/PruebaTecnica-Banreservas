@@ -3,9 +3,10 @@ using ExchangeRate.Models;
 using ExchangeRate.Providers;
 using Moq;
 
-namespace ExchangeRate.Tests
+namespace ExchangeRate.Test
 {
-    public class ExchangeServiceTests
+    [TestClass]
+    public class ExchangeServiceTest
     {
         [TestMethod]
         public async Task ConvertAsync_ReturnsBestExchangeRate()
@@ -25,8 +26,7 @@ namespace ExchangeRate.Tests
 
             var service = new ExchangeService(new List<IProvider> { provider1.Object, provider2.Object, provider3.Object });
 
-            var request = new ExchangeRequest("USD", "DOP", 100);
-          
+            var request = new ExchangeRequest("USD", "DOP", 1);
 
             // Act
             var result = await service.GetBestExchangeRate(request);

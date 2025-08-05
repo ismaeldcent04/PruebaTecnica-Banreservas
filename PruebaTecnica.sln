@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeUseCase.App", "Exch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.Lib", "ExchangeRate.Lib\ExchangeRate.Lib.csproj", "{03B65584-54E7-4B07-AFE0-663E5F784259}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRate.Test", "ExchangeRate.Test\ExchangeRate.Test.csproj", "{016729B5-E75B-43BD-B43C-E80457577827}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{03B65584-54E7-4B07-AFE0-663E5F784259}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03B65584-54E7-4B07-AFE0-663E5F784259}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03B65584-54E7-4B07-AFE0-663E5F784259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{016729B5-E75B-43BD-B43C-E80457577827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{016729B5-E75B-43BD-B43C-E80457577827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{016729B5-E75B-43BD-B43C-E80457577827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{016729B5-E75B-43BD-B43C-E80457577827}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,10 +1,10 @@
 ﻿using ExchangeRate.Models;
 using ExchangeRate.Providers;
 
-namespace ExchangeRate.Tests
+namespace ExchangeRate.Test
 {
     [TestClass]
-    public class APIProviderTests
+    public sealed class APIProvider1Test
     {
         [TestMethod]
         public async Task Convert_ReturnsSuccessfulResult()
@@ -12,12 +12,12 @@ namespace ExchangeRate.Tests
            
             var provider = new APIProvider1();
 
-            var request = new ExchangeRequest("USD", "DOP", 9000);
-            
+            var request = new ExchangeRequest("USD", "DOP", 100);
+          
             var result = await provider.Convert(request);
 
             Assert.IsTrue(result.IsSuccessful);
-            Assert.AreEqual("APIProvider1", result.Provider);
+            Assert.AreEqual("exchangerate-api", result.Provider);
             Assert.IsTrue(result.ExchangeRate > 0);
         }
     }
